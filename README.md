@@ -1,3 +1,4 @@
-# React-Exercise
-
-리액트 으렵다
+# 9월 2일부터 FrontEnd Study 시작
+1. poiema web 3강씩 읽고 질문 5개 답변과 함께 준비하기
+2. 알고리즘 문제 1~2개 풀어오고 만나서 1시간 풀기
+3. React 강의 5개 들으며 공부
