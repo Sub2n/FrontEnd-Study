@@ -31,23 +31,30 @@
             parseInt(this.state.value) ===
             this.state.first * this.state.second
           ) {
-            this.setState({
-              result: '정답',
-              first: Math.ceil(Math.random() * 9),
-              second: Math.ceil(Math.random() * 9),
-              value: '',
-              answer: this.state.value,
+            this.setState(prevState => {
+              return {
+                result: `${prevState.value} 정답!`,
+                first: Math.ceil(Math.random() * 9),
+                second: Math.ceil(Math.random() * 9),
+                value: '',
+              };
             });
           } else {
             this.setState({
               result: '땡!',
               value: '',
-              answer: '',
             });
+            this.input.focus();
           }
         };
 
         onChange = e => this.setState({ value: e.target.value });
+
+        onRefInput = c => {
+          this.input = c;
+        };
+
+        input;
 
         render() {
           return (
@@ -58,15 +65,14 @@
               </div>
               <form onSubmit={this.onSubmit}>
                 <input
+                  ref={this.onRefInput}
                   type="number"
                   value={this.state.value}
                   onChange={this.onChange}
                 />
                 <button>입력!</button>
               </form>
-              <div>
-                {this.state.answer} {this.state.result}
-              </div>
+              <div>{this.state.result}</div>
             </React.Fragment>
           );
         }
