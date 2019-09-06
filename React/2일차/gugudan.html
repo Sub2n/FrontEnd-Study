@@ -17,15 +17,14 @@
     <!-- <div id="root"><div> -->
     <script type="text/babel">
       class GuGudan extends React.Component {
-        constructor(props) {
-          super(props);
-          this.state = {
-            first: Math.ceil(Math.random() * 9),
-            second: Math.ceil(Math.random() * 9),
-            value: '',
-            result: '',
-          };
-        }
+        state = {
+          first: Math.ceil(Math.random() * 9),
+          second: Math.ceil(Math.random() * 9),
+          value: '',
+          result: '',
+          answer: '',
+        };
+
         onSubmit = e => {
           e.preventDefault();
           if (
@@ -37,18 +36,22 @@
               first: Math.ceil(Math.random() * 9),
               second: Math.ceil(Math.random() * 9),
               value: '',
+              answer: this.state.value,
             });
           } else {
             this.setState({
               result: '땡!',
               value: '',
+              answer: '',
             });
           }
         };
 
+        onChange = e => this.setState({ value: e.target.value });
+
         render() {
           return (
-            <div>
+            <React.Fragment>
               <div>
                 {' '}
                 {this.state.first} 곱하기 {this.state.second} 는?{' '}
@@ -57,23 +60,20 @@
                 <input
                   type="number"
                   value={this.state.value}
-                  onChange={e => this.setState({ value: e.target.value })}
+                  onChange={this.onChange}
                 />
                 <button>입력!</button>
               </form>
-              <div>{this.state.result}</div>
-            </div>
+              <div>
+                {this.state.answer} {this.state.result}
+              </div>
+            </React.Fragment>
           );
         }
       }
     </script>
     <script type="text/babel">
-      ReactDOM.render(
-        <div>
-          <GuGudan />
-        </div>,
-        document.querySelector('#root')
-      );
+      ReactDOM.render(<GuGudan />, document.querySelector('#root'));
     </script>
   </body>
 </html>
