@@ -1,18 +1,23 @@
 const React = require('react');
-const { Component } = React;
+// const { Component } = React;
 
-class Try extends Component {
-  render() {
-    return (
-      <li>
-        <b>{this.props.value.fruit}</b> - {this.props.value.taste}
-        <div>content1</div>
-        <div>content2</div>
-        <div>content3</div>
-        <div>content4</div>
-      </li>
-    );
-  }
-}
+const Try = ({ tryInfo }) => {
+  return (
+    <li>
+      <div>{tryInfo.try}</div>
+      <div>{tryInfo.result}</div>
+    </li>
+  );
+};
+// class Try extends Component {
+//   render() {
+//     return (
+//       <li>
+//         <div>{this.props.tryInfo.try}</div>
+//         <div>{this.props.tryInfo.result}</div>
+//       </li>
+//     );
+//   }
+// }
 
 module.exports = Try;
