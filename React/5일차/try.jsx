@@ -1,15 +1,16 @@
 const React = require('react');
-// const { Component } = React;
+const { PureComponent, memo } = React;
 
-const Try = ({ tryInfo }) => {
+const Try = memo(({ tryInfo }) => {
   return (
     <li>
       <div>{tryInfo.try}</div>
       <div>{tryInfo.result}</div>
     </li>
   );
-};
-// class Try extends Component {
+});
+
+// class Try extends PureComponent {
 //   render() {
 //     return (
 //       <li>

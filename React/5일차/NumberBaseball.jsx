@@ -1,5 +1,5 @@
 const React = require('react');
-const { useState } = React;
+const { useState, memo, createRef } = React;
 const Try = require('./try');
 
 // 숫자 4개를 겹치지 않고 랜덤하게 뽑는 함수
@@ -13,7 +13,7 @@ function getNumbers() {
   return array;
 }
 
-const NumberBaseball = () => {
+const NumberBaseball = memo(() => {
   const [result, setResult] = useState('');
   const [value, setValue] = useState('');
   const [answer, setAnswer] = useState(getNumbers());
@@ -91,7 +91,8 @@ const NumberBaseball = () => {
       </ul>
     </>
   );
-};
+});
+
 // class NumberBaseball extends Component {
 //   state = {
 //     result: '',
