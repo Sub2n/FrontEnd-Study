@@ -7,9 +7,11 @@ class ResponseCheck extends Component {
     message: '클릭해서 시작하세요.',
     result: [],
   };
+
   timeout;
   startTime;
   endTime;
+
   onClickScreen = () => {
     const { state, message, result } = this.state;
     if (state === 'waiting') {
@@ -42,13 +44,22 @@ class ResponseCheck extends Component {
     }
   };
 
+  onReset = () => {
+    this.setState({
+      result: [],
+    });
+  };
+
   renderAverage = () => {
     const { result } = this.state;
     return result.length === 0 ? null : (
-      <div>
-        평균 시간: {result.reduce((a, b) => a + c) / this.state.result.length}
-        ms
-      </div>
+      <>
+        <div>
+          평균 시간: {result.reduce((a, b) => a + c) / this.state.result.length}
+          ms
+        </div>
+        <button onClick={this.onReset}>리셋</button>
+      </>
     );
   };
   render() {
