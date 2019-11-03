@@ -17,7 +17,6 @@ function swap(arr, n1, n2) {
 function makeNumbers(set, arr, index, toPick) {
   if (index === toPick) {
     set.add(+arr.filter((org, i) => i < toPick).join(''));
-    console.log(set)
   } else {
     for (let i = index; i < arr.length; ++i) {
       swap(arr, index, i);
