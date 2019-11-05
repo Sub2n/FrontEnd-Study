@@ -10,12 +10,43 @@ n에게 가능한 경우
 3. i에서 1을 빼는 경우 - d[n-1] + 1
 */
 
-int go(int n) {
 
+// Top-down (Recursion)
+int go(int n, int* d) {
+	if (n == 1) return 0;
+	if (d[n] > 0) return d[n];
+
+	d[n] = go(n - 1, d) + 1;
+
+	if (n % 2 == 0) {
+		int temp = go(n / 2, d) + 1;
+		if (temp < d[n]) d[n] = temp;
+	}
+
+	if (n % 3 == 0) {
+		int temp = go(n / 3, d) + 1;
+		if (temp < d[n]) d[n] = temp;
+	}
+
+	return d[n];
 }
 
+
+// Bottom-up
 int main(void) {
-	go(2); // 1
-	go(10); // 3
+	int n;
+	cin >> n;
+	
+	static int d[(int)1E6 + 1];
+
+	d[1] = 0;
+
+	for (int i = 2; i <= n; i++) {
+		d[i] = d[i - 1] + 1;
+		if (i % 2 == 0 && d[i] > d[i / 2] + 1) d[i] = d[i / 2] + 1;
+		if (i % 3 == 0 && d[i] > d[i / 3] + 1) d[i] = d[i / 3] + 1;
+	}
+
+	cout << d[n];
 }
 
