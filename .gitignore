@@ -59,3 +59,7 @@ typings/
 
 # next.js build output
 .next
+/.vs/FrontEnd-Study/v16/Browse.VC.db
+/Algorithm/c++/1463/.vs/1463/v16/Browse.VC.opendb
+/Algorithm/c++/4단고음/.vs/4단고음/v16/Browse.VC.opendb
+/Algorithm/c++/4단고음/.vs/4단고음/v16/Browse.VC.db
