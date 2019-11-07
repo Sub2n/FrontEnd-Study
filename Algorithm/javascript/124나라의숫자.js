@@ -9,7 +9,6 @@ function solution(n) {
       n = Math.floor(n / 3);
     }
   }
-  console.log(ans)
   return ans;
 }
 
