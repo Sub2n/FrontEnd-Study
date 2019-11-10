@@ -21,6 +21,7 @@ function solution(genres, plays) {
     }
   });
 
+  // 객체 -> 배열
   for (let genre in genreObject) {
     genreTable.push({
       genre,
