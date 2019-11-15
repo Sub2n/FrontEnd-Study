@@ -4,6 +4,7 @@
 //   operations: [],
 //   sum: number
 // }
+// BFS
 
 function solution(numbers, target) {
   const queue = [{
