@@ -1,6 +1,5 @@
 function solition(N) {
-  // 2kg, 5kg 상자가 N kg 만족하게 몇 개 박스로 가능한지 return
-  // weight 충족이 조건, 
+  // 2kg, 5kg 상자가 N kg 만족하게 최소 몇 개 박스로 가능한지 return
   let ans = 0; // box의 개수
   const item = [5, 2];
 
