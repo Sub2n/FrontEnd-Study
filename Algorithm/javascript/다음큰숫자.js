@@ -8,6 +8,3 @@ function solution(n) {
     } else ans += 1;
   }
 }
-
-console.log(solution(78));
-console.log(solution(15));
