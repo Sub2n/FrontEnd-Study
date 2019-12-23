@@ -1,3 +1,4 @@
+// 미완
 function solution(N, stages) {
   let answer = [];
   let failure = [];
