@@ -7,33 +7,17 @@
 정답이 클 수 있으니 문자열로 바꾸어 리턴
 */
 
-// 완전탐색
-function swap(arr, n1, n2) {
-  const temp = arr[n1];
-  arr[n1] = arr[n2];
-  arr[n2] = temp;
-}
-
-function makeNumbers(set, arr, index, toPick) {
-  if (index === toPick) {
-    set.add(+arr.filter((org, i) => i < toPick).join(''));
-  } else {
-    for (let i = index; i < arr.length; ++i) {
-      swap(arr, index, i);
-      makeNumbers(set, arr, index + 1, toPick);
-      swap(arr, index, i);
-    }
-  }
-}
-
 function solution(numbers) {
-  const nums = new Set();
+  const nums = [];
+  for (let i = 0; i < numbers.length; i++) {
+    nums[i] = numbers[i];
+  }
+  nums.sort((a, b) => {
+    return (String(b) + String(a)) - (String(a) + String(b))
+  });
+  if (nums[0] === 0) return '0';
 
-  makeNumbers(nums, numbers, 0, numbers.length);
-
-  console.log(Array.from(nums).sort((a, b) => b - a))
-
-  return Array.from(nums).sort((a, b) => b - a)[0] + '';
+  return nums.reduce((a, b) => String(a) + String(b))
 }
 
 console.log(solution([6, 10, 2])); // 6210
