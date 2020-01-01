@@ -63,3 +63,12 @@ typings/
 /Algorithm/c++/1463/.vs/1463/v16/Browse.VC.opendb
 /Algorithm/c++/4단고음/.vs/4단고음/v16/Browse.VC.opendb
 /Algorithm/c++/4단고음/.vs/4단고음/v16/Browse.VC.db
+
+# Visual C++ cache files
+ipch/
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile
