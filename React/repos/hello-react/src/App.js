@@ -1,8 +1,8 @@
 import React from 'react';
-import Say from './Say';
+import EventPracticeFunc from './EventPractice_func';
 
 const App = () => {
-  return <Say />;
+  return <EventPracticeFunc />;
 };
 
 export default App;
