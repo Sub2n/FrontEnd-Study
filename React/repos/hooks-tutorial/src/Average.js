@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 
 const getAverage = numbers => {
   console.log('평균값 계산중..');
@@ -11,14 +11,14 @@ const Average = () => {
   const [list, setList] = useState([]);
   const [number, setNumber] = useState('');
 
-  const onChange = e => {
+  const onChange = useCallback(e => {
     setNumber(e.target.value);
-  };
+  }, []); // 컴포넌트가 처음 렌더링될 때만 함수 생성
 
-  const onInsert = e => {
+  const onInsert = useCallback(() => {
     setList([...list, +number]);
     setNumber('');
-  };
+  }, [list, number]); //  list 또는 number가 바뀔 때만 함수 생성
 
   const avg = useMemo(() => getAverage(list), [list]);
 
