@@ -1,6 +1,7 @@
 import React from 'react';
-import CSSModule from './CSSModule';
+
+import StyledComponent from './StyledComponent';
 const App = () => {
-  return <CSSModule />;
+  return <StyledComponent />;
 };
 export default App;
