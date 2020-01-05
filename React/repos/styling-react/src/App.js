@@ -1,6 +1,6 @@
 import React from 'react';
-import SassComponent from './SassComponent';
+import CSSModule from './CSSModule';
 const App = () => {
-  return <SassComponent />;
+  return <CSSModule />;
 };
 export default App;
