@@ -27,10 +27,11 @@ const Todos = ({
 }) => {
   const onSubmit = e => {
     e.preventDefault();
+    if (!input) return;
     onInsert(input);
     onChangeInput('');
   };
-  const onChange = e => onChangeInput(e.target);
+  const onChange = e => onChangeInput(e.target.value);
   return (
     <div>
       <form onSubmit={onSubmit}>
