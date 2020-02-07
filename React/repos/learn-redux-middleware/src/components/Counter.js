@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Presentational Component
 const Counter = ({ onIncrease, onDecrease, number }) => {
   return (
     <div>
