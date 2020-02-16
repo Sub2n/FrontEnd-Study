@@ -25,7 +25,7 @@ export const decreaseAsync = createAction(DECREASE_ASYNC, () => undefined);
 function* increaseSaga() {
   yield delay(1000); // 1초를 기다린다.
   yield put(increase()); // action을 dispatch 한다.
-  const number = yield select(state => state.counter);
+  const number = yield select(state => state.counter); // Reeux state 접근
   console.log(`현재 값은 ${number}입니다.`);
 }
 
